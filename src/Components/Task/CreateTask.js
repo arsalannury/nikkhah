@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
+import "./createTask.css";
 
 const CreateTask = () => {
   const [taskTitle, setTaskTitle] = useState("");
@@ -35,7 +36,7 @@ const CreateTask = () => {
     <div
       style={{ background: "#a2ceed" }}
       className="
-          d-flex align-items-center col-12 justify-content-center h-100"
+          d-flex align-items-center col-12 justify-content-center task-container"
     >
       <Form className="my-5 bg-white p-5">
         <h2 className="fw-bold">Edit Task</h2>
@@ -65,9 +66,7 @@ const CreateTask = () => {
             className="my-3"
             id="disabledSelect"
           >
-            <option selected >
-              ---
-            </option>
+            <option selected>---</option>
             <option>Todo</option>
             <option>Done</option>
             <option>InQA</option>

@@ -11,7 +11,7 @@ const Header = () => {
             Home
           </NavLink>
           <Nav className="me-auto">
-            <NavLink className="btn btn-success" to="/todos">
+            <NavLink className="btn btn-success" to="/tasks">
               create Task
             </NavLink>
           </Nav>

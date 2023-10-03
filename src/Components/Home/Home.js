@@ -21,7 +21,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="row">
+      <div className="row" style={{overflow:'auto'}}>
         {tasks && tasks.length > 0
           ? tasks.map((task) => (
               <div className="col-xl-2 col-md-6 justify-content-center">
