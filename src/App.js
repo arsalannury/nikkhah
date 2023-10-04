@@ -1,8 +1,8 @@
-import './App.css';
-import { Routes,Route } from 'react-router-dom';
-import Home from './Components/Home/Home';
-import Header from './Components/Header/Header';
-import CreateTask from './Components/Task/CreateTask';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Components/Home/Home";
+import Header from "./Components/Header/Header";
+import CreateTask from "./Components/Task/CreateTask";
 
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/tasks" element={<CreateTask />} />
+        <Route path="/tasks/:id" element={<CreateTask />} />
       </Routes>
     </>
   );
