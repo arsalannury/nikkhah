@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useNavigate, useParams } from "react-router-dom";
 import "./createTask.css";
 
-const CreateTask = () => {
+const CreateTask = ({ createMode }) => {
   const [taskTitle, setTaskTitle] = useState("");
   const [taskBody, setTaskBody] = useState("");
   const [taskStatus, setTaskStatus] = useState("Todo");
@@ -20,12 +20,19 @@ const CreateTask = () => {
   };
 
   useEffect(() => {
-    console.log('run');
     if (params.id) {
       getTasks();
     }
     return () => {};
   }, []);
+
+  useEffect(() => {
+    return () => {
+      setTaskBody("");
+      setTaskStatus("");
+      setTaskTitle("");
+    };
+  }, [createMode]);
 
   const createTask = async () => {
     const TaskModel = {

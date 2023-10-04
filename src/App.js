@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/tasks" element={<CreateTask />} />
+        <Route path="/tasks" element={<CreateTask createMode={true} />} />
         <Route path="/tasks/:id" element={<CreateTask />} />
       </Routes>
     </>
