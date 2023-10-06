@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Home = () => {
   const [tasks, setTasks] = useState([]);
@@ -47,7 +48,26 @@ const Home = () => {
                     </Card.Link>
                     <i
                       style={{ marginLeft: "10px", cursor: "pointer" }}
-                      onClick={() => removeTask(task.id)}
+                      onClick={() => {
+                        Swal.fire({
+                          title: "ایا از حذف تسک اطمینان دارید ؟",
+                          text: "بعد از حذف قابلیت بازگشت وجود ندارد",
+                          icon: "warning",
+                          showCancelButton: true,
+                          confirmButtonColor: "#3085d6",
+                          cancelButtonColor: "#d33",
+                          confirmButtonText: "حذف",
+                          cancelButtonText: "انصراف",
+                        }).then((result) => {
+                          if (result.isConfirmed) {
+                            Swal.fire(
+                              "با موفقیت حذف شد!",
+                              "success"
+                            );
+                            removeTask(task.id);
+                          }
+                        });
+                      }}
                       className="bi bi-trash"
                     ></i>
                   </div>
